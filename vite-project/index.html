@@ -8,19 +8,28 @@
   </head>
   <body>
     <div id="app">
-      <h1>Rolling Dice!</h1>
+      <h1>Dice Rolling Simulator</h1>
+
+      <form action="/action_page.php">
       <div>
-        <input id="player1" placeholder="Enter Player 1 Name" />
+        <input type="text" id="player1" class="TextBox" placeholder="Enter Player 1 Name" required/>
       </div>
       <div>
-        <input id="player2" placeholder="Enter Player 2 Name" />
+        <input type="text" id="player2" class="TextBox" placeholder="Enter Player 2 Name" required/>
       </div>
-        <button id="roll">Roll Dice</button>
+      <div>
+        <input type="text" id="#OfRolls" class="TextBox" placeholder="Enter # of Rolls (ex: 5)" required/>
+      </div>
+
+      <button disabled="disabled" id="roll">Roll Dice</button>
         <div id="results"></div>
     </div>
+  </form>
+
     <script type="module" src="/rolling.js"></script>
   </body>
 </html>
 
 
 <!-- https://www.freecodecamp.org/news/how-to-use-javascript-math-random-as-a-random-number-generator/ -->
+<!-- https://www.w3schools.com/tags/att_input_required.asp -->

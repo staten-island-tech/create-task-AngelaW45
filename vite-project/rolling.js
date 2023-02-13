@@ -4,6 +4,14 @@ const getRandomNumber = (min, max) =>
 //calls function getRandomNumber, get "randam" numbers between 1-6 (both numbers are included)
 const rollDice = () => getRandomNumber(1, 6);
 
+$("TextBox").click(function () {
+  if ($("#roll").is(":disabled")) {
+    $("#roll").removeAttr("disabled");
+  } else {
+    $("#roll").attr("disabled", "disabled");
+  }
+});
+
 document.getElementById("roll").addEventListener("click", function () {
   // gets User input on player names
   const player1 = document.getElementById("player1").value;
