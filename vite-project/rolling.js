@@ -6,10 +6,11 @@ const getRandomNumber = (min, max) =>
 //calls function getRandomNumber, get "randam" numbers between 1-6 (both numbers are included)
 const rollDice = () => getRandomNumber(1, 6);
 
-const formDetails = document.getElementById("submitted");
+const DOMSelectors = {
+  submitForm: document.querySelector("form"),
+};
 
-formDetails.addEventListener("submit", async (event) => {
-  event.preventDefault();
+DOMSelectors.submitForm.addEventListener("submit", function (event) {
   // gets User input on player names
   const player1 = document.getElementById("player1").value;
   const player2 = document.getElementById("player2").value;
@@ -31,11 +32,13 @@ formDetails.addEventListener("submit", async (event) => {
   }
 
   // display the result on the page
+  function card()
   document.getElementById("results").innerHTML = `
   <p>${player1} => ${player1Score}</p>
   <p>${player2} => ${player2Score}</p>
   <p>${result}</p>
   `;
+  event.preventDefault();
 });
 
 /* document
@@ -79,3 +82,5 @@ const form = document.getElementById("form");
 const log = document.getElementById("log");
 form.addEventListener("submit", logSubmit);
  */
+
+// const formDetails = document.getElementById("submitted");
