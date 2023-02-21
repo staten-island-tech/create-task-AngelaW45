@@ -1,13 +1,13 @@
 html,
 body,
-*{
-   text-align: center;
-   padding: 0;
-   margin: auto;
-   font-size: 62.5%;
+* {
+  text-align: center;
+  padding: 0;
+  margin: auto;
+  font-size: 62.5%;
 }
 
-#app{
+#app {
   margin-top: 8rem;
   text-align: center;
   font-size: 10rem;
@@ -23,4 +23,13 @@ body,
   padding: 1rem;
   background-color: blueviolet;
   border-radius: 2.5rem;
+}
+
+#results {
+  width: 25rem;
+  height: 20rem;
+  padding: 5rem 5rem 0rem 5rem;
+  margin-top: 5rem;
+  border-radius: 3rem;
+  background-color: blueviolet;
 }
