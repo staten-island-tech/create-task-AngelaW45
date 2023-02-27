@@ -22,9 +22,12 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
   for (var i = 0; i < NumOfRolls; i++) {
     const player1Score = rollDice();
     const player2Score = rollDice();
+    console.log(rollDice);
 
     // Empty string to store result from later
     let result = "";
+    let history = "";
+    console.log(history);
 
     // determine the result
     if (player1Score > player2Score) {
@@ -35,20 +38,15 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
       result = "This round is tied";
     }
 
-    function card() {
-      DOMSelectors.results.insertAdjacantHTML(
-        "beforeend",
-        (document.getElementById("results").innerHTML = `
-    <h1>${player1} => ${player1Score}</h1>
-    <h2>${player2} => ${player2Score}</h2>
-    <h3>${result}</h3>
-    `)
-      );
-    }
-    card();
     // display the result on the page
+    document.getElementById("results").innerHTML = `
+    <div id="Card"><p>${player1} => ${player1Score}</p>
+    <p>${player2} => ${player2Score}</p>
+    <p>${result}</p></div>
+  `;
   }
 });
+// display the result on the page
 
 /* const DOMSelectors = {
   submitForm: document.querySelector("form"),
