@@ -9,9 +9,10 @@
   </head>
   <body>
 
-    <div id="app">
-      <button class="history" id="history">History</button>
-      <h1>Dice Rolling Simulator</h1>
+
+      <h1 id="title">Dice Rolling Simulator</h1>
+      <h5 id="text">Click the history button to see your past rolls!</h5>
+      <h5 id="text">Reset the game after you roll!</h5>
 
       <form id="form">
       <div>
@@ -21,17 +22,23 @@
         <input type="text" id="player2" class="TextBox" placeholder="Enter Player 2 Name" required/>
       </div>
       <div>
-        <input type="number" id="NofRolls" class="TextBox" placeholder="Enter # of Rolls" required/>
+        <input type="number" id="NumOfRolls" class="TextBox" placeholder="Enter # of Rolls" required/>
       </div>
 
       <input id="submitted" type="submit" value="Submit" required />
+
+      <input id="reset" type="button" value="Reset form"></input>
+
         <div id="results" class="results"></div>
-    </div>
-
   </form>
-  <p id="log"></p>
 
-    <script type="module" src="/rolling.js"></script>
+  <button class="history" id="historyBtn">History</button>
+      <div id="historyBox">hello</div>
+  <!-- <p id="log"></p> -->
+
+    <script type="module" src="/rolling.js">
+      
+    </script>
   </body>
 </html>
 

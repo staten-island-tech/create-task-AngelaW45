@@ -8,16 +8,21 @@ const rollDice = () => getRandomNumber(1, 6);
 
 const DOMSelectors = {
   submitForm: document.querySelector("form"),
-  results: document.querySelector("results"),
+  results: document.getElementById("results"),
+  Reset: document.getElementById("reset"),
+  player1: document.getElementById("player1"),
+  player2: document.getElementById("player2"),
+  NumOfRolls: document.getElementById("NumOfRolls"),
+  historyBox: document.getElementById("historyBox"),
+  historyBtn: document.getElementById("historyBtn"),
 };
 
 DOMSelectors.submitForm.addEventListener("submit", function (event) {
   event.preventDefault();
   // gets User input on player names
-
   const player1 = document.getElementById("player1").value;
   const player2 = document.getElementById("player2").value;
-  const NumOfRolls = document.getElementById("NofRolls").value;
+  const NumOfRolls = document.getElementById("NumOfRolls").value;
 
   for (let i = 0; i < NumOfRolls; i++) {
     const player1Score = rollDice();
@@ -49,14 +54,46 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
       Result.insertAdjacentHTML("afterend", results);
     }
     ShowResult();
-  }
-});
 
-/* document.getElementById("results").innerHTML = `
-    <div id="Card"><p>${player1} => ${player1Score}</p>
-    <p>${player2} => ${player2Score}</p>
-    <p>${result}</p></div>
-  `; */
+    function clearfields() {
+      DOMSelectors.NumOfRolls.value = "";
+      DOMSelectors.player1.value = "";
+      DOMSelectors.player2.value = "";
+      DOMSelectors.results.value = ``;
+    }
+
+    DOMSelectors.Reset.addEventListener("click", function () {
+      undisableBtn();
+      clearfields();
+    });
+
+    function disableBtn() {
+      document.getElementById("submitted").disabled = true;
+    }
+    disableBtn();
+  }
+
+  function undisableBtn() {
+    document.getElementById("submitted").disabled = false;
+  }
+
+  for (let i = 0;)
+  //history button stuff (loop it!!, check classroom for referance)
+
+  DOMSelectors.historyBtn.addEventListener("click", function () {
+    function ShowHistory() {
+      const HistoryBox = document.querySelector("#historyBox");
+      let historyBox = `
+      <div id="Card">
+      <p>${player1} => ${player1Score}</p>
+      <p>${player2} => ${player2Score}</p>
+      <p>${result}</p></div>
+      `;
+      HistoryBox.insertAdjacentHTML("afterend", historyBox);
+    }
+    ShowHistory();
+  });
+});
 
 // display the result on the page
 
