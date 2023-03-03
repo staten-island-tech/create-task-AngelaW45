@@ -45,14 +45,14 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     }
 
     function ShowResult() {
-      const Result = document.querySelector("#results");
+      // const Result = document.querySelector("#results");
       let results = `
       <div id="Card">
       <p>${player1} => ${player1Score}</p>
       <p>${player2} => ${player2Score}</p>
       <p>${result}</p></div>
       `;
-      Result.insertAdjacentHTML("afterend", results);
+      DOMSelectors.results.insertAdjacentHTML("afterbegin", results);
     }
     ShowResult();
 
@@ -63,13 +63,16 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
       DOMSelectors.player1.value = "";
       DOMSelectors.player2.value = "";
 
-      for (let i = 0; i < NumOfRolls; i++) {
+      /* for (let i = 0; i < NumOfRolls; i++) {
         document.getElementById("Card").innerHTML = "";
         document.getElementById("Card").style.backgroundColor = "transparent";
         document.getElementById("Card").style.opacity = "";
         console.log("hi");
         //only does it once?? why??
-      }
+      } */
+
+      document.getElementById("results").innerHTML = "";
+      console.log("it worked");
     }
 
     DOMSelectors.Reset.addEventListener("click", function () {
@@ -87,7 +90,6 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     document.getElementById("submitted").disabled = false;
   }
 
-  // for (let i = 0;)
   //history button stuff (loop it!!, check classroom for referance)`
 
   DOMSelectors.historyBtn.addEventListener("click", function () {
