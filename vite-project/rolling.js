@@ -15,6 +15,7 @@ const DOMSelectors = {
   NumOfRolls: document.getElementById("NumOfRolls"),
   historyBox: document.getElementById("historyBox"),
   historyBtn: document.getElementById("historyBtn"),
+  Card: document.getElementById("Card"),
 };
 
 DOMSelectors.submitForm.addEventListener("submit", function (event) {
@@ -56,10 +57,19 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     ShowResult();
 
     function clearfields() {
+      // const Result = document.getElementById("#results");
+      // document.NumOfRolls.innerHTML = "";
       DOMSelectors.NumOfRolls.value = "";
       DOMSelectors.player1.value = "";
       DOMSelectors.player2.value = "";
-      DOMSelectors.results.value = ``;
+
+      for (let i = 0; i < NumOfRolls; i++) {
+        document.getElementById("Card").innerHTML = "";
+        document.getElementById("Card").style.backgroundColor = "transparent";
+        document.getElementById("Card").style.opacity = "";
+        console.log("hi");
+        //only does it once?? why??
+      }
     }
 
     DOMSelectors.Reset.addEventListener("click", function () {
@@ -77,8 +87,8 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     document.getElementById("submitted").disabled = false;
   }
 
-  for (let i = 0;)
-  //history button stuff (loop it!!, check classroom for referance)
+  // for (let i = 0;)
+  //history button stuff (loop it!!, check classroom for referance)`
 
   DOMSelectors.historyBtn.addEventListener("click", function () {
     function ShowHistory() {
