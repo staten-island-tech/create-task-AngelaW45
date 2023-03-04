@@ -16,40 +16,9 @@ body,
   font-size: 3rem;
 }
 
-#historyBtn {
-  font-size: 3rem;
-  padding: 1rem;
-  background-color: blueviolet;
-  border-radius: 2.5rem;
-  margin-top: 5rem;
-}
-
-#historyBox {
-  font-size: 3rem;
-  padding: 5rem 5rem 5rem 5rem;
-  background-color: blueviolet;
-  border-radius: 2.5rem;
-  margin: 2.5rem 45rem 5rem 45rem;
-}
-
 .TextBox {
   font-size: 4rem;
   margin: 1.2rem;
-}
-
-#submitted {
-  font-size: 3rem;
-  padding: 1rem;
-  background-color: blueviolet;
-  border-radius: 2.5rem;
-}
-
-#reset {
-  font-size: 3rem;
-  padding: 1rem;
-  margin-left: 5rem;
-  background-color: blueviolet;
-  border-radius: 2.5rem;
 }
 
 #Card {
@@ -62,9 +31,25 @@ body,
   font-size: 4rem;
 }
 
+#historyBox {
+  font-size: 3rem;
+  padding: 5rem 5rem 5rem 5rem;
+  background-color: transparent;
+  border-radius: 2.5rem;
+  margin: 2.5rem 45rem 5rem 45rem;
+}
+
 #HCard {
   width: 35rem;
   height: 5rem;
   margin-top: 3rem;
   font-size: 4rem;
+}
+
+.button {
+  font-size: 3rem;
+  padding: 1rem;
+  background-color: blueviolet;
+  border-radius: 2.5rem;
+  margin: 5rem;
 }

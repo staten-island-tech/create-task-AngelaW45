@@ -15,6 +15,7 @@ const DOMSelectors = {
   NumOfRolls: document.getElementById("NumOfRolls"),
   historyBox: document.getElementById("historyBox"),
   historyBtn: document.getElementById("historyBtn"),
+  CHistoryBtn: document.getElementById("CHistoryBtn"),
   Card: document.getElementById("Card"),
 };
 
@@ -52,10 +53,20 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
       DOMSelectors.results.insertAdjacentHTML("afterbegin", results);
     }
     ShowResult();
+    disableBtn();
 
-    //when clicking hitory button, show history
+    //When clicking the reset Button, undisable the Submit button, and clear the form
+    DOMSelectors.Reset.addEventListener("click", function () {
+      undisableBtn();
+      clearfields();
+    });
+
+    //when clicking history button, show history, and disable the show history button
     DOMSelectors.historyBtn.addEventListener("click", function () {
       function ShowHistory() {
+        document.getElementById("historyBox").style.backgroundColor =
+          "BlueViolet";
+
         let historyBox = `
       <div id="HCard">
       <p id= "text">${result}</p>
@@ -64,39 +75,47 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
         DOMSelectors.historyBox.insertAdjacentHTML("afterbegin", historyBox);
       }
       ShowHistory();
+      HdisableBtn();
     });
 
-    //When clicking the reset Button, undisable the Submit button, and clear the form
-    DOMSelectors.Reset.addEventListener("click", function () {
-      undisableBtn();
-      clearfields();
+    //when clicking on close history button, close history, and undisable show history button
+    DOMSelectors.CHistoryBtn.addEventListener("click", function () {
+      function CloseHistory() {
+        document.getElementById("historyBox").style.backgroundColor =
+          "transparent";
+      }
+      CloseHistory();
+      HundisableBtn();
+      Hclearfields();
     });
+  }
 
-    function clearfields() {
-      DOMSelectors.NumOfRolls.value = "";
-      DOMSelectors.player1.value = "";
-      DOMSelectors.player2.value = "";
-      document.getElementById("results").innerHTML = "";
-    }
+  function clearfields() {
+    DOMSelectors.NumOfRolls.value = "";
+    /* DOMSelectors.player1.value = "";
+    DOMSelectors.player2.value = ""; */
+    document.getElementById("results").innerHTML = "";
+  }
 
-    function disableBtn() {
-      document.getElementById("submitted").disabled = true;
-    }
-    disableBtn();
+  function Hclearfields() {
+    document.getElementById("historyBox").innerHTML = "";
+  }
+
+  //disable or undisable btn for submited btn
+  function disableBtn() {
+    document.getElementById("submitted").disabled = true;
   }
 
   function undisableBtn() {
     document.getElementById("submitted").disabled = false;
   }
+
+  //disable or undisable btn for history btn
+  function HdisableBtn() {
+    document.getElementById("historyBtn").disabled = true;
+  }
+
+  function HundisableBtn() {
+    document.getElementById("historyBtn").disabled = false;
+  }
 });
-
-// display the result on the page
-
-/* const DOMSelectors = {
-  submitForm: document.querySelector("form"),
-}; */
-
-/* function logSubmit(event) {
-  log.textContent = `hi`;
-  event.preventDefault();
-} */

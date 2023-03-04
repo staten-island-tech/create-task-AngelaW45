@@ -12,7 +12,7 @@
 
       <h1 id="title">Dice Rolling Simulator</h1>
       <h5 id="text">Click the history button to see your past rolls!</h5>
-      <h5 id="text">Reset the game after you roll!</h5>
+      <h5 id="text">Reset the form after you roll!</h5>
 
       <form id="form">
       <div>
@@ -25,13 +25,14 @@
         <input type="number" id="NumOfRolls" class="TextBox" placeholder="Enter # of Rolls" required/>
       </div>
 
-      <input id="submitted" type="submit" value="Submit" required />
+      <input class= "button" id="submitted" type="submit" value="Submit" required />
 
-      <input id="reset" type="button" value="Reset form"></input>
+      <input class= "button" id="reset" type="button" value="Roll Again"></input>
   </form>
   <div id="results" class="results"></div>
 
-  <button class="history" id="historyBtn">History</button>
+  <button class= "button" id="historyBtn">History</button>
+  <button class= "button" id="CHistoryBtn">Close History</button>
       <div id="historyBox"></div>
   <!-- <p id="log"></p> -->
 
