@@ -29,7 +29,7 @@ body,
   padding: 5rem 5rem 5rem 5rem;
   background-color: blueviolet;
   border-radius: 2.5rem;
-  margin: 2.5rem 30rem 5rem 30rem;
+  margin: 2.5rem 45rem 5rem 45rem;
 }
 
 .TextBox {
@@ -59,5 +59,12 @@ body,
   margin-top: 5rem;
   border-radius: 3rem;
   background-color: blueviolet;
+  font-size: 4rem;
+}
+
+#HCard {
+  width: 35rem;
+  height: 5rem;
+  margin-top: 3rem;
   font-size: 4rem;
 }

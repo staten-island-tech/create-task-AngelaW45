@@ -20,7 +20,7 @@ const DOMSelectors = {
 
 DOMSelectors.submitForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  // gets User input on player names
+  // gets User input on player names and number of rolls
   const player1 = document.getElementById("player1").value;
   const player2 = document.getElementById("player2").value;
   const NumOfRolls = document.getElementById("NumOfRolls").value;
@@ -28,57 +28,56 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
   for (let i = 0; i < NumOfRolls; i++) {
     const player1Score = rollDice();
     const player2Score = rollDice();
-    console.log(rollDice);
 
-    // Empty string to store result from later
+    // Empty string to store result and history for later
     let result = [];
-    let history = [];
-    console.log(history);
 
     // determine the result
     if (player1Score > player2Score) {
-      result = `${player1} won the round`;
+      result = `${player1} Won The Round`;
     } else if (player2Score > player1Score) {
-      result = `${player2} won the round`;
+      result = `${player2} Won The Round`;
     } else {
-      result = "This round is tied";
+      result = "This Round Is Tied";
     }
 
     function ShowResult() {
-      // const Result = document.querySelector("#results");
       let results = `
       <div id="Card">
       <p>${player1} => ${player1Score}</p>
       <p>${player2} => ${player2Score}</p>
-      <p>${result}</p></div>
+      <p>${result}</p>
+      </div>
       `;
       DOMSelectors.results.insertAdjacentHTML("afterbegin", results);
     }
     ShowResult();
 
-    function clearfields() {
-      // const Result = document.getElementById("#results");
-      // document.NumOfRolls.innerHTML = "";
-      DOMSelectors.NumOfRolls.value = "";
-      DOMSelectors.player1.value = "";
-      DOMSelectors.player2.value = "";
+    //when clicking hitory button, show history
+    DOMSelectors.historyBtn.addEventListener("click", function () {
+      function ShowHistory() {
+        let historyBox = `
+      <div id="HCard">
+      <p id= "text">${result}</p>
+      </div>
+      `;
+        DOMSelectors.historyBox.insertAdjacentHTML("afterbegin", historyBox);
+      }
+      ShowHistory();
+    });
 
-      /* for (let i = 0; i < NumOfRolls; i++) {
-        document.getElementById("Card").innerHTML = "";
-        document.getElementById("Card").style.backgroundColor = "transparent";
-        document.getElementById("Card").style.opacity = "";
-        console.log("hi");
-        //only does it once?? why??
-      } */
-
-      document.getElementById("results").innerHTML = "";
-      console.log("it worked");
-    }
-
+    //When clicking the reset Button, undisable the Submit button, and clear the form
     DOMSelectors.Reset.addEventListener("click", function () {
       undisableBtn();
       clearfields();
     });
+
+    function clearfields() {
+      DOMSelectors.NumOfRolls.value = "";
+      DOMSelectors.player1.value = "";
+      DOMSelectors.player2.value = "";
+      document.getElementById("results").innerHTML = "";
+    }
 
     function disableBtn() {
       document.getElementById("submitted").disabled = true;
@@ -89,98 +88,15 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
   function undisableBtn() {
     document.getElementById("submitted").disabled = false;
   }
-
-  //history button stuff (loop it!!, check classroom for referance)`
-
-  DOMSelectors.historyBtn.addEventListener("click", function () {
-    function ShowHistory() {
-      const HistoryBox = document.querySelector("#historyBox");
-      let historyBox = `
-      <div id="Card">
-      <p>${player1} => ${player1Score}</p>
-      <p>${player2} => ${player2Score}</p>
-      <p>${result}</p></div>
-      `;
-      HistoryBox.insertAdjacentHTML("afterend", historyBox);
-    }
-    ShowHistory();
-  });
 });
 
 // display the result on the page
 
 /* const DOMSelectors = {
   submitForm: document.querySelector("form"),
-};
-
-DOMSelectors.submitForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  // gets User input on player names
-  const player1 = document.getElementById("player1").value;
-  const player2 = document.getElementById("player2").value;
-
-  // roll dice for both players
-  const player1Score = rollDice();
-  const player2Score = rollDice();
-
-  // Empty string to store result from later
-  let result = "";
-
-  // determine the result
-  if (player1Score > player2Score) {
-    result = `${player1} won the round`;
-  } else if (player2Score > player1Score) {
-    result = `${player2} won the round`;
-  } else {
-    result = "This round is tied";
-  }
-
-  // display the result on the page
-  document.getElementById("results").innerHTML = `
-<p>${player1} => ${player1Score}</p>
-<p>${player2} => ${player2Score}</p>
-<p>${result}</p>
-`;
-  }); */
+}; */
 
 /* function logSubmit(event) {
   log.textContent = `hi`;
   event.preventDefault();
-}
-
-const form = document.getElementById("form");
-const log = document.getElementById("log");
-form.addEventListener("submit", logSubmit);
- */
-
-// const formDetails = document.getElementById("submitted");
-
-/* const DOMSelectors = {
-  submitForm: document.querySelector("form"),
-  box1: document.querySelector("player1"),
-  box2: document.querySelector("player2"),
-  box3: document.querySelector("NofRolls"),
-  Results: document.querySelector("results"),
-};
-
-function card(player1, player2) {
-  DOMSelectors.Results.insertAdjacentHTML(
-    "beforeend",
-    <div class="result-card">
-      <p>
-        ${player1} => ${player1Score}
-      </p>
-      <p>
-        ${player2} => ${player2Score}
-      </p>
-      <p>${result}</p>`;
-    </div>
-  );
-}
-
-function clearfields() {
-  DOMSelectors.box1.value = "";
-  DOMSelectors.box2.value = "";
-  DOMSelectors.box3.value = "";
-}
- */
+} */
