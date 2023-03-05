@@ -28,6 +28,7 @@ body,
   margin-top: 5rem;
   border-radius: 3rem;
   background-color: blueviolet;
+  color: white;
   font-size: 4rem;
 }
 
@@ -44,6 +45,7 @@ body,
   height: 5rem;
   margin-top: 3rem;
   font-size: 4rem;
+  color: white;
 }
 
 .button {
@@ -52,4 +54,5 @@ body,
   background-color: blueviolet;
   border-radius: 2.5rem;
   margin: 5rem;
+  color: white;
 }

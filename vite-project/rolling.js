@@ -72,7 +72,7 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
       <p id= "text">${result}</p>
       </div>
       `;
-        DOMSelectors.historyBox.insertAdjacentHTML("afterbegin", historyBox);
+        DOMSelectors.historyBox.insertAdjacentHTML("beforeend", historyBox);
       }
       ShowHistory();
       HdisableBtn();
@@ -104,18 +104,22 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
   //disable or undisable btn for submited btn
   function disableBtn() {
     document.getElementById("submitted").disabled = true;
+    document.getElementById("submitted").style.backgroundColor = "grey";
   }
 
   function undisableBtn() {
     document.getElementById("submitted").disabled = false;
+    document.getElementById("submitted").style.backgroundColor = "BlueViolet";
   }
 
   //disable or undisable btn for history btn
   function HdisableBtn() {
     document.getElementById("historyBtn").disabled = true;
+    document.getElementById("historyBtn").style.backgroundColor = "grey";
   }
 
   function HundisableBtn() {
     document.getElementById("historyBtn").disabled = false;
+    document.getElementById("historyBtn").style.backgroundColor = "BlueViolet";
   }
 });
