@@ -31,7 +31,7 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     const player2Score = rollDice();
 
     // Empty string to store result and history for later
-    let result = [];
+    let result = "";
 
     // determine the result
     if (player1Score > player2Score) {
