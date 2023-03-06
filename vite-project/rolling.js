@@ -30,7 +30,7 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
     const player1Score = rollDice();
     const player2Score = rollDice();
 
-    // Empty string to store result and history for later
+    // Empty string to store result
     let result = "";
 
     // determine the result
@@ -92,8 +92,6 @@ DOMSelectors.submitForm.addEventListener("submit", function (event) {
 
   function clearfields() {
     DOMSelectors.NumOfRolls.value = "";
-    /* DOMSelectors.player1.value = "";
-    DOMSelectors.player2.value = ""; */
     document.getElementById("results").innerHTML = "";
   }
 
